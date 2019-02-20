@@ -30,7 +30,8 @@ devConfigPromise.then(devConfig => {
     opts = opts.concat(['--config', 'test/e2e/nightwatch.conf.js'])
   }
   if (opts.indexOf('--env') === -1) {
-    opts = opts.concat(['--env', 'chrome'])
+    // !!!注意!!! `chrome, firefox` のようにカンマの次にスペースがあるとエラーになる
+    opts = opts.concat(['--env', 'chrome,firefox'])
   }
 
   const spawn = require('cross-spawn')
