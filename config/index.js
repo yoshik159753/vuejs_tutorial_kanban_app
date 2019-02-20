@@ -11,6 +11,17 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {},
+    // API プロキシの設定例
+    // proxyTable: {
+    //   // /api で始まるリクエストを `api.yourservice.com` にプロキシする
+    //   '/api': {
+    //     target: 'http://api.yourservice.com',
+    //     changeOrigin: true,
+    //     pathRewrite: {
+    //       '^/api': ''
+    //     }
+    //   }
+    // },
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
