@@ -10,8 +10,7 @@ export default {
   // 短縮メソッド名 : キーワード "function" はもはや必要ではありません。
 
   [types.AUTH_LOGIN] (state, payload) {
-    // TODO:
-    throw new Error('AUTH_LOGIN mutation should be implemented')
+    state.auth = payload
   },
 
   [types.FETCH_ALL_TASKLIST] (state, payload) {
