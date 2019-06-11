@@ -10,9 +10,12 @@ export default {
   // 分割代入で各プロパティを個別に処理。
   // 分割代入は ES2015 以降の記法。
 
-  login: ({ commit }) => {
-    // TODO:
-    throw new Error('login action should be implemented')
+  login: ({ commit }, authInfo) => {
+    return Auth.login(authInfo)
+      .then(({ token, userId }) => {
+        commit(types.AUTH_LOGIN, { token, userId })
+      })
+      .catch(err => { throw err })
   },
 
   fetchLists: ({ commit }) => {
